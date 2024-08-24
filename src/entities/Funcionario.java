@@ -11,4 +11,20 @@ public class Funcionario extends Usuario {
         this.departamento = departamento;
         this.areaInteresse = areaInteresse;
     }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getAreaInteresse() {
+        return areaInteresse;
+    }
+
+    public void setAreaInteresse(String areaInteresse) {
+        this.areaInteresse = areaInteresse;
+    }
 }

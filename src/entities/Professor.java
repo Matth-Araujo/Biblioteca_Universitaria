@@ -11,4 +11,20 @@ public class Professor extends Usuario{
         this.especializacao = especializacao;
         this.centro = centro;
     }
+
+    public String getEspecializacao() {
+        return especializacao;
+    }
+
+    public void setEspecializacao(String especializacao) {
+        this.especializacao = especializacao;
+    }
+
+    public String getCentro() {
+        return centro;
+    }
+
+    public void setCentro(String centro) {
+        this.centro = centro;
+    }
 }

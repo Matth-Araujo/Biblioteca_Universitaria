@@ -13,5 +13,19 @@ public class Aluno extends Usuario{
         this.curso = curso;
     }
 
+    public Double getMatricula() {
+        return matricula;
+    }
 
+    public void setMatricula(Double matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
 }

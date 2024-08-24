@@ -1,6 +1,4 @@
-import entities.Aluno;
-import entities.Funcionario;
-import entities.Professor;
+import entities.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,6 +26,8 @@ public class Main {
             System.out.print("Escolha uma das Operacoes: ");
             n = scan.nextInt();
             scan.nextLine();
+
+            CadastroLivro cadastroLivro = new CadastroLivro();
 
             switch (n){
                 case 1:
@@ -74,9 +74,24 @@ public class Main {
                         default:
                             System.out.println("Tipo de usuario nao existente!!");
                     }
+                case 2:
+                    System.out.print("Quantos livros deseja cadastrar: ");
+                    int j = scan.nextInt();
+                    for (int i = 0; i < n ; i++){
+                        System.out.println("Insira os dados do " + (i + 1)+ " livro");
+                        System.out.print("Titulo do livro: ");
+                        String titulo = scan.nextLine();
+                        System.out.print("Idioma do livro: ");
+                        String idioma = scan.nextLine();
+                        System.out.print("Genero: ");
+                        String genero = scan.nextLine();
+                        System.out.print("Nome do Autor: ");
+                        String autor = scan.nextLine();
 
+                        Livro livro = new Livro(titulo,autor,genero,idioma);
+                        cadastroLivro.addLivro(livro);
 
-
+                    }
 
             }
 
