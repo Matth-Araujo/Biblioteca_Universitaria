@@ -77,7 +77,8 @@ public class Main {
                 case 2:
                     System.out.print("Quantos livros deseja cadastrar: ");
                     int j = scan.nextInt();
-                    for (int i = 0; i < n ; i++){
+                    scan.nextLine();
+                    for (int i = 0; i < j ; i++){
                         System.out.println("Insira os dados do " + (i + 1)+ " livro");
                         System.out.print("Titulo do livro: ");
                         String titulo = scan.nextLine();
@@ -90,8 +91,9 @@ public class Main {
 
                         Livro livro = new Livro(titulo,autor,genero,idioma);
                         cadastroLivro.addLivro(livro);
-
                     }
+                    System.out.println(cadastroLivro);
+                case 3:
 
             }
 

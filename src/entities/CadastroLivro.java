@@ -16,4 +16,13 @@ public class CadastroLivro {
         livros.remove(livro);
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Livros cadastrados:\n");
+        for (Livro livro : livros){
+            sb.append(livro.getTitulo()).append(" - ").append(livro.getNomeAutor()).append("\n");
+        }
+        return sb.toString();
+    }
 }
