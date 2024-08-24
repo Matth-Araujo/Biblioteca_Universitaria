@@ -14,14 +14,13 @@ public class Main {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         int n = 0;
 
-        do {
+       //do {
             System.out.println("----------");
             System.out.println("Biblioteca");
             System.out.println("----------");
             System.out.println("[1] Cadastrar usuario");
             System.out.println("[2] Cadastrar livro");
             System.out.println("[3] Alugar livro");
-            System.out.println("[4] Devolver livro");
             System.out.println("[9] sair");
             System.out.print("Escolha uma das Operacoes: ");
             n = scan.nextInt();
@@ -93,11 +92,45 @@ public class Main {
                         cadastroLivro.addLivro(livro);
                     }
                     System.out.println(cadastroLivro);
-                case 3:
+                    break;
 
+                case 3:
+                    System.out.println("Informe seus dados abaixo");
+                    System.out.print("Nome: ");
+                    String nomeAlugue = scan.nextLine();
+                    System.out.print("Email: ");
+                    String emailAlugue = scan.nextLine();
+
+                    Usuario usuario = new Usuario(nomeAlugue,emailAlugue);
+                    Alugar alugar = new Alugar(new Date(),usuario);
+
+                    System.out.print("Quantos livros desejar Alugar: ");
+                    int k = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println("Insira os dados do livro q deseja alugar");
+                    for (int i = 0 ; i < k; i++) {
+                        System.out.print("Titulo do livro: ");
+                        String titulo = scan.nextLine();
+                        System.out.print("Idioma do livro: ");
+                        String idioma = scan.nextLine();
+                        System.out.print("Genero: ");
+                        String genero = scan.nextLine();
+                        System.out.print("Nome do Autor: ");
+                        String autor = scan.nextLine();
+
+                        Livro livro = new Livro(titulo,autor,genero,idioma);
+                        alugar.addLivro(livro);
+                    }
+                    System.out.println();
+                    System.out.println("RESUMO DO PEDIDO:");
+                    System.out.println(alugar);
+                    break;
+
+                default:
+                    System.out.println("Operador invalido!!");
             }
 
-        }while(n!=9);
+       // }while(n!=9);
         scan.close();
     }
 }

@@ -12,6 +12,11 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
+    }
+
     public Usuario(String nome, Date nascimento, String sexo, String email) {
         this.nome = nome;
         this.nascimento = nascimento;
@@ -49,5 +54,10 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " - "+email;
     }
 }
